@@ -71,3 +71,6 @@ and also many others featues used for predicting final valie
 ## How to Use
 1. Install requirements: `pip install -r requirements.txt`
 2. Run Jupyter notebook: `multivariate.ipynb`
+3. API endpoint: [https://linear-regression-model-pbj2.onrender.com/predict](https://linear-regression-model-pbj2.onrender.com/predict)
+First add docs on [https://linear-regression-model-pbj2.onrender.com/] for being able to access endpoint url
+- This endpoint accepts flight data as a JSON payload and returns the prediction for whether the flight will be delayed or on time.
