@@ -1,7 +1,7 @@
 # Flight Delay Prediction Project
 
 ## Overview
-This project provides a complete solution for flight delay prediction, helping travelers and airlines anticipate disruptions and improve operational efficiency. The system includes a machine learning model API and a Flutter mobile application that allows users to check potential flight delays based on various parameters.
+This project provides a complete solution for flight delay prediction, helping travelers and airlines anticipate disruptions and improve operational efficiency. The system includes a model, API and a Flutter mobile application that allows users to check potential flight delays based on various parameters.
 
 ## Project Components
 
