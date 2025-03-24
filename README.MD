@@ -112,7 +112,7 @@ To test the API:
 ### Response Format
 ```json
 {
-    "predicted_delay_duration": "1.0 min",
+    "predicted_delay_duration": "10.0 min",
     "delayed_departure_time": "08:58"
 }
 ```
