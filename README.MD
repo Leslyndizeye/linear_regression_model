@@ -83,7 +83,7 @@ To test the API:
   ```
 
 ## Demo
-[YouTube Video Demo](https://www.youtube.com/your_demo_link_here) (2-minute demonstration)
+[YouTube Video Demo](https://www.youtube.com/your_demo_link_here) (5 min demonstration)
 
 ## API Usage Examples
 
