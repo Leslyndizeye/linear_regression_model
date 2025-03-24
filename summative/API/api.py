@@ -1,7 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, validator
 import joblib
-import numpy as np
 import pandas as pd
 
 # Load the saved model
@@ -72,6 +71,18 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Helper function to convert HHMM to minutes
+def convert_to_minutes(time):
+    """Convert HHMM time format to total minutes since midnight."""
+    return (time // 100) * 60 + (time % 100)
+
+# Helper function to convert minutes to HH:MM
+def convert_to_hhmm(minutes):
+    """Convert total minutes since midnight to HH:MM format."""
+    hours = minutes // 60
+    minutes = minutes % 60
+    return f"{int(hours):02d}:{int(minutes):02d}"  # Add colon between hours and minutes
+
 # Define prediction endpoint
 @app.post("/predict")
 def predict(data: FlightData):
@@ -101,12 +112,21 @@ def predict(data: FlightData):
             'DISTANCE_GROUP'
         ])
 
-        # Make prediction
-        prediction = model.predict(input_data)[0]
-        return {"prediction": float(prediction)}
+        # Make prediction (delay duration in minutes)
+        predicted_delay = model.predict(input_data)[0]
+
+        # Calculate exact delayed departure time
+        scheduled_dep_time_min = convert_to_minutes(data.dep_time)
+        delayed_dep_time_min = scheduled_dep_time_min + predicted_delay
+        delayed_dep_time = convert_to_hhmm(delayed_dep_time_min)  # Updated to HH:MM format
+
+        # Return the predicted delay duration and exact delayed time
+        return {
+            "predicted_delay_duration": f"{float(predicted_delay)} min",  # Add "min" to indicate minutes
+            "delayed_departure_time": delayed_dep_time  # Now in HH:MM format
+        }
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
-
 # Run the API
 if __name__ == "__main__":
     import uvicorn
