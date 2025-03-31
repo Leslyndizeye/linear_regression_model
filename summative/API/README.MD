@@ -171,5 +171,3 @@ Here, you will be able to send requests to the API and receive responses directl
 - The API should be tested using Swagger UI, which provides an interactive interface for calling the API endpoints.
 
 ---
-
-**Note**: The public API URL is hosted at `https://linear-regression-model-pbj2.onrender.com`, and you can interact with the API directly through the provided Swagger UI interface.
