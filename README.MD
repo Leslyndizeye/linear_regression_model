@@ -85,8 +85,7 @@ To test the API:
 ## Demo
 [YouTube Video Demo](https://www.youtube.com/watch?si=zbKMe8Zc6gjI3N8k&v=_t-_O-kZy8Y&feature=youtu.be) (5 min demonstration)
 
-## API Usage Exampleshttps://www.youtube.com/your_demo_link_here
-
+## API Usage Exampleshttps://www.youtube.com/watch?si=zbKMe8Zc6gjI3N8k&v=_t-_O-kZy8Y&feature=youtu.be
 ### Input JSON Format
 ```json
 {
